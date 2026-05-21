@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1440px; }
+    body {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: #2b2b2d;
+      background: #ffffff;
+    }
+    .canvas {
+      width: 1080px;
+      height: 1440px;
+      border: 0;
+      background: #ffffff;
+      overflow: hidden;
+    }
+    .poster {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 0;
+      padding: 56px 48px 44px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background:
+        linear-gradient(90deg, rgba(255, 37, 78, 0.045), transparent 34%),
+        linear-gradient(#ffffff, #ffffff);
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 82px;
+      margin-bottom: 42px;
+    }
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 41px;
+      background: #f6d85f;
+      box-shadow: 0 6px 18px rgba(236, 25, 64, 0.14);
+    }
+    .author {
+      font-size: 31px;
+      line-height: 1.18;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .author-desc {
+      margin-top: 8px;
+      color: #66666b;
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    .content {
+      display: grid;
+      align-content: start;
+      grid-template-rows: auto auto auto;
+    }
+    h1 {
+      margin: 0;
+      color: #303033;
+      font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", Georgia, "Times New Roman", serif;
+      font-size: 82px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 950;
+      max-width: 980px;
+    }
+    h1 .hot {
+      color: #f21f46;
+      font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", Georgia, "Times New Roman", serif;
+      font-size: 88px;
+      font-weight: 950;
+      -webkit-text-stroke: 1px rgba(242, 31, 70, 0.12);
+      text-shadow: 0 10px 22px rgba(242, 31, 70, 0.10);
+    }
+    .subtitle {
+      margin: 24px 0 86px;
+      color: #68686d;
+      max-width: 930px;
+      font-size: 31px;
+      line-height: 1.36;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+    ul {
+      display: grid;
+      gap: 48px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 22px;
+      align-items: start;
+      min-height: 50px;
+      font-size: 31px;
+      line-height: 1.35;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+    .num {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: #ef1741;
+      font-size: 27px;
+      line-height: 1;
+      font-weight: 950;
+      transform: translateY(0);
+    }
+    li .hot {
+      color: #f21f46;
+      font-size: 34px;
+      font-weight: 950;
+    }
+    .tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: end;
+      min-height: 58px;
+    }
+    .tag {
+      color: #6d6d72;
+      background: #f1f1f2;
+      border-radius: 999px;
+      padding: 11px 19px;
+      font-size: 23px;
+      line-height: 1;
+      font-weight: 850;
+    }
+    .brand {
+      margin-left: auto;
+      color: #a3a3a7;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <main class="poster">
+      <header class="profile">
+        <div class="avatar">🧙</div>
+        <div>
+          <div class="author">Leah</div>
+          <div class="author-desc">AI应用实例</div>
+        </div>
+      </header>
+      <section class="content">
+        <h1>小红书封面 <span class="hot">极简</span><span class="hot">爆款公式</span></h1>
+        <div class="subtitle">把复杂文案压缩成30字精华，用大标题和关键词先抓住注意力。</div>
+        <ul><li><span class="num">1</span><span class="li-text">只保留一个<span class="hot">核心结论</span>，别把封面写成正文</span></li>
+<li><span class="num">2</span><span class="li-text"><span class="hot">关键词</span>放大三倍以上，成为第一视觉焦点</span></li>
+<li><span class="num">3</span><span class="li-text">用<span class="hot">3到4种字号</span>制造层次，手机上也能一眼读懂</span></li>
+<li><span class="num">4</span><span class="li-text">底部标签只负责<span class="hot">补充场景</span>，不抢主标题</span></li></ul>
+      </section>
+      <footer class="tags">
+        <span class="tag">#小红书封面</span>
+<span class="tag">#爆款标题</span>
+<span class="tag">#内容提炼</span>
+<span class="tag">#视觉主体</span>
+        <div class="brand">封面灵感 · 极简爆款</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

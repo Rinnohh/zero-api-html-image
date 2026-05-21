@@ -1,0 +1,15 @@
+{
+  "issue": "HTML 生图方法论",
+  "title": "为什么要选择\nHTML生图？",
+  "watermark": "HTML IMAGE",
+  "subline": "STRUCTURED CONTENT · BROWSER RENDER · ZERO API",
+  "items": [
+    "结构化内容 → 自动排版 → 浏览器截图",
+    "文字清晰 · 版式稳定 · 风格统一",
+    "不用生图 API，也能批量生成信息图"
+  ],
+  "core": "核心：系统化 > 手动做图",
+  "coreSubtitle": "Visual Composition · 像素级可控",
+  "footerLeft": "ZERO API IMAGE · HTML2IMAGE",
+  "brand": "zero-api-html-image"
+}

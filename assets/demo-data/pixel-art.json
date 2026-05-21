@@ -1,0 +1,24 @@
+{
+  "eyebrow": "Hermes 安装",
+  "title": "Hermes安装教程",
+  "subtitle": "从 0 到 1 完成 Hermes 本地安装：先获取可信安装包，再完成系统安装与首次启动授权，最后用一个简单任务确认 Hermes 已经能正常读取文件、执行指令并输出结果。",
+  "metrics": [
+    {"value": "01", "label": "下载安装包"},
+    {"value": "02", "label": "完成本地安装"},
+    {"value": "03", "label": "首次启动授权"},
+    {"value": "04", "label": "运行测试任务"}
+  ],
+  "sections": [
+    {"heading": "步骤 01 · 获取 Hermes", "body": "从官方发布渠道下载适合当前系统的 Hermes 安装包，确认文件来源可信。"},
+    {"heading": "步骤 02 · 安装到本机", "body": "按系统提示完成安装；macOS 可拖入 Applications，Windows 可运行安装程序。"},
+    {"heading": "步骤 03 · 首次启动", "body": "打开 Hermes，完成必要授权、账号登录和本地工作目录初始化。"}
+  ],
+  "items": [
+    "准备网络、浏览器和一个可写入的本地工作目录。",
+    "首次启动后检查是否能新建会话并读取本地文件。",
+    "运行一个简单任务，例如让 Hermes 总结一段文字。",
+    "如果后续要安装 Skill，再进入 Hermes 的 skills 目录放置完整 Skill 文件夹。"
+  ],
+  "tags": ["HERMES", "INSTALL", "SETUP", "LOCAL"],
+  "brand": ""
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      width: 1080px;
+      background:
+        radial-gradient(circle at 7% 5%, rgba(255, 118, 190, 0.28) 0 90px, rgba(255, 118, 190, 0.12) 150px, transparent 250px),
+        radial-gradient(circle at 98% 27%, rgba(113, 164, 255, 0.24) 0 120px, rgba(113, 164, 255, 0.10) 230px, transparent 350px),
+        radial-gradient(circle at 57% 39%, rgba(186, 123, 235, 0.16) 0 80px, rgba(186, 123, 235, 0.07) 145px, transparent 235px),
+        linear-gradient(135deg, #faeef6 0%, #eff9fb 45%, #f1ecff 100%);
+      color: #071022;
+      padding: 64px 66px 54px;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .page { position: relative; }
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: 999px;
+      filter: blur(34px);
+      opacity: 0.72;
+      pointer-events: none;
+    }
+    .page::before {
+      width: 390px;
+      height: 390px;
+      left: -190px;
+      top: -170px;
+      background: rgba(255, 138, 205, 0.28);
+    }
+    .page::after {
+      width: 430px;
+      height: 430px;
+      right: -230px;
+      top: 260px;
+      background: rgba(120, 174, 255, 0.22);
+    }
+    .corner {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-color: rgba(255,255,255,0.7);
+      opacity: 0.9;
+    }
+    .corner.tl { top: -34px; left: -36px; border-top: 1px solid; border-left: 1px solid; }
+    .corner.br { right: -36px; bottom: -34px; border-right: 1px solid; border-bottom: 1px solid; }
+    .eyebrow {
+      text-align: center;
+      color: #6f7890;
+      font-size: 19px;
+      letter-spacing: 8px;
+      font-weight: 760;
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 0;
+      color: #071022;
+      text-align: center;
+      font-size: 72px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 950;
+      font-family: "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", "Hiragino Sans GB", "SimHei", sans-serif;
+    }
+    h1 span { color: #5164d8; }
+    .subtitle {
+      max-width: 780px;
+      margin: 28px auto 74px;
+      color: #657083;
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.65;
+      font-weight: 500;
+    }
+    .card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,255,255,0.48), rgba(255,255,255,0.24));
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      border-radius: 24px;
+      padding: 46px 46px 42px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(30px) saturate(150%);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      box-shadow:
+        0 28px 86px rgba(31, 38, 76, 0.14),
+        inset 0 1px 0 rgba(255,255,255,0.88),
+        inset 0 -1px 0 rgba(255,255,255,0.34);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 18px;
+      height: 18px;
+      border-top: 1px solid rgba(81, 100, 216, 0.45);
+      border-left: 1px solid rgba(81, 100, 216, 0.45);
+    }
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+    .icon {
+      color: #738095;
+      font-size: 38px;
+      font-weight: 900;
+      width: 52px;
+      flex: 0 0 52px;
+      text-align: center;
+    }
+    .right-card .icon,
+    .right-card h2 { color: #5164d8; }
+    h2 {
+      margin: 0;
+      color: #738095;
+      font-size: 40px;
+      line-height: 1.16;
+      font-weight: 950;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .tagline {
+      color: #657083;
+      font-size: 22px;
+      margin-bottom: 36px;
+      font-weight: 520;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 38px;
+      align-items: start;
+    }
+    .label {
+      color: #657083;
+      font-size: 15px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .bar {
+      height: 40px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.54);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .bar-fill {
+      height: 100%;
+      width: var(--bar-width);
+      background: rgba(115, 128, 149, 0.76);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .right-card .bar-fill {
+      background: linear-gradient(90deg, #5164d8, #a66be4);
+    }
+    .point {
+      font-size: 24px;
+      line-height: 1.45;
+      font-weight: 850;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .fit {
+      color: #071022;
+      font-size: 23px;
+      line-height: 1.55;
+      font-weight: 820;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      padding-top: 6px;
+    }
+    .note {
+      margin-top: 32px;
+      background: rgba(255, 255, 255, 0.42);
+      border-left: 5px solid rgba(81, 100, 216, 0.35);
+      border-radius: 14px;
+      padding: 18px 22px;
+      color: #657083;
+      font-size: 22px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+    .footer {
+      margin-top: 42px;
+      text-align: center;
+      color: #657083;
+      font-size: 16px;
+      letter-spacing: 2px;
+      font-weight: 720;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="corner tl"></div>
+    <div class="corner br"></div>
+
+    <div class="eyebrow">$eyebrow</div>
+    <h1>$comparison_title_html</h1>
+    <div class="subtitle">$subtitle</div>
+
+    <section class="card left-card">
+      <div class="title-row">
+        <div class="icon">$left_icon</div>
+        <h2>$left_title</h2>
+      </div>
+      <div class="tagline">$left_tagline</div>
+      <div class="grid">
+        <div>
+          <div class="label">$left_bar_label</div>
+          <div class="bar"><div class="bar-fill" style="--bar-width: $left_bar_width;">$left_bar_value</div></div>
+          <div class="point">$left_point</div>
+        </div>
+        <div>
+          <div class="label">$left_fit_label</div>
+          <div class="fit">$left_fit</div>
+        </div>
+      </div>
+      <div class="note">$left_note</div>
+    </section>
+
+    <section class="card right-card">
+      <div class="title-row">
+        <div class="icon">$right_icon</div>
+        <h2>$right_title</h2>
+      </div>
+      <div class="tagline">$right_tagline</div>
+      <div class="grid">
+        <div>
+          <div class="label">$right_bar_label</div>
+          <div class="bar"><div class="bar-fill" style="--bar-width: $right_bar_width;">$right_bar_value</div></div>
+          <div class="point">$right_point</div>
+        </div>
+        <div>
+          <div class="label">$right_fit_label</div>
+          <div class="fit">$right_fit</div>
+        </div>
+      </div>
+      <div class="note">$right_note</div>
+    </section>
+
+    <div class="footer">$brand</div>
+  </main>
+</body>
+</html>

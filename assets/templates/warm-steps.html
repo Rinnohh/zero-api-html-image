@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      width: 1080px;
+      background: #f2eee5;
+      color: #191817;
+      font-family: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
+      padding: 48px 58px 54px;
+    }
+    .page {
+      border-top: 2px solid #1b1a18;
+      border-bottom: 2px solid #1b1a18;
+      padding: 18px 0 26px;
+    }
+    .topbar, .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: #9b836a;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      margin: 44px 0 30px;
+      align-items: start;
+    }
+    .kicker {
+      color: #a27655;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
+      font-size: 82px;
+      line-height: 1.02;
+      letter-spacing: 0;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+    .lead {
+      margin-top: 28px;
+      color: #4a4038;
+      font-size: 21px;
+      line-height: 1.8;
+      font-weight: 650;
+    }
+    .side {
+      border-left: 1px solid #d4c8b8;
+      padding-left: 28px;
+      display: grid;
+      gap: 28px;
+    }
+    .side-card {
+      border-bottom: 1px solid #d9cfc2;
+      padding-bottom: 22px;
+    }
+    .side-card:last-child { border-bottom: 0; padding-bottom: 0; }
+    .side-label {
+      color: #a89582;
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .side-card strong {
+      display: block;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 31px;
+      line-height: 1.16;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .side-card p {
+      margin: 0;
+      color: #5f544b;
+      font-size: 16px;
+      line-height: 1.68;
+      font-weight: 650;
+    }
+    .band {
+      border: 1px solid #d8cfc3;
+      background: rgba(255, 252, 246, 0.52);
+      padding: 24px;
+      margin: 28px 0 24px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #ded4c8;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 920;
+    }
+    .eng {
+      color: #a89582;
+      font-size: 12px;
+      letter-spacing: 4px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .index-card {
+      min-height: 162px;
+      border: 1px solid #ded4c8;
+      background: #fbf8f1;
+      padding: 18px 14px;
+    }
+    .num {
+      color: #a27655;
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .index-card h3 {
+      margin: 0 0 12px;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 880;
+      overflow-wrap: anywhere;
+    }
+    .pill {
+      display: inline-flex;
+      border: 1px solid #b89b82;
+      border-radius: 999px;
+      padding: 3px 9px;
+      color: #8d6a4f;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .panel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .panel {
+      border: 1px solid #d8cfc3;
+      background: rgba(255, 252, 246, 0.56);
+      padding: 24px;
+    }
+    p, li {
+      color: #4a4038;
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+    p { margin: 0; }
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+    .callout {
+      margin-top: 22px;
+      border-left: 4px solid #a27655;
+      background: #eee6da;
+      padding: 16px 18px;
+      color: #4a4038;
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 760;
+    }
+    .callout:empty { display: none; }
+    .footer {
+      margin-top: 28px;
+      align-items: center;
+    }
+    .brand {
+      color: #8e8174;
+      font-size: 16px;
+      letter-spacing: 1px;
+      font-weight: 800;
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <span>$digest</span>
+      <span>$meta</span>
+    </div>
+
+    <section class="hero">
+      <div>
+        <div class="kicker">$eyebrow</div>
+        <h1>$title</h1>
+        <div class="lead">$subtitle</div>
+      </div>
+      <aside class="side">
+        <div class="side-card">
+          <div class="side-label">$side_one_label</div>
+          <strong>$side_one_title</strong>
+          <p>$side_one_body</p>
+        </div>
+        <div class="side-card">
+          <div class="side-label">$side_two_label</div>
+          <strong>$side_two_title</strong>
+          <p>$side_two_body</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="band">
+      <div class="section-head">
+        <h2>内容索引</h2>
+        <span class="eng">INDEX</span>
+      </div>
+      <div class="index-grid">$topics_html</div>
+    </section>
+
+    <section class="panel-grid">$panels_html</section>
+    <div class="callout">$callout</div>
+
+    <div class="footer">
+      <span>NOTES → INFOGRAPHIC</span>
+      <span class="brand">$brand</span>
+    </div>
+  </main>
+</body>
+</html>

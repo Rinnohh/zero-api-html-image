@@ -1,0 +1,24 @@
+{
+  "eyebrow": "TERMINAL MODE",
+  "title": "ZERO_API_HTML_IMAGE",
+  "subtitle": "一个用 HTML 模板和浏览器截图生成信息图、数据卡片、封面与知识地图的 Skill，不调用任何生图 API。",
+  "metrics": [
+    {"value": "0 API", "label": "无需图片生成接口"},
+    {"value": "HTML", "label": "结构化内容渲染"},
+    {"value": "PNG", "label": "浏览器截图输出"},
+    {"value": "10+", "label": "多种模板风格"}
+  ],
+  "sections": [
+    {"heading": "MODULE: TEMPLATE_ENGINE", "body": "把标题、指标、列表、标签和署名注入 HTML/CSS 模板，确保版式稳定复用。"},
+    {"heading": "MODULE: BROWSER_CAPTURE", "body": "使用当前运行时的浏览器能力打开本地 HTML，并截图导出高清 PNG。"},
+    {"heading": "MODULE: GUIDED_FLOW", "body": "生成前逐步确认标题、署名、内容和模板，避免直接生成不符合预期的图片。"}
+  ],
+  "items": [
+    "适合技术方案、Agent 工作流、数据监控和工具介绍。",
+    "文字由浏览器渲染，中文清晰，布局可控。",
+    "内容型模板自适应高度，封面模板保持固定尺寸。",
+    "模板修改后自动更新 demo 和模板选择总览图。"
+  ],
+  "tags": ["ZERO-API", "HTML2IMAGE", "BROWSER-SHOT", "SKILL"],
+  "brand": "Codex Skill · HTML Screenshot Engine"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zero API HTML Image"
+  short_description: "用 HTML 模板和浏览器截图零 API 生成信息图、数据卡片、封面和对比图。"
+  default_prompt: "把这段内容做成一张信息图。"

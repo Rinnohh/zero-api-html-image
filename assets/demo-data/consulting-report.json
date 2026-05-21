@@ -1,0 +1,16 @@
+{
+  "eyebrow": "咨询报告",
+  "title": "HTML 生图在结构化内容里的优势",
+  "subtitle": "适合汇报、复盘、行业分析和方案对比，重点是可信、克制、可扫描。",
+  "metrics": [
+    {"value": "0元", "label": "API 图片成本"},
+    {"value": "100%", "label": "模板复用率"},
+    {"value": "1080px", "label": "固定输出宽度"}
+  ],
+  "sections": [
+    {"heading": "问题", "body": "文生图对中文字形和版式控制不稳定，难以批量复用。"},
+    {"heading": "方案", "body": "用 HTML/CSS 固定布局，再通过浏览器截图输出 PNG。"},
+    {"heading": "收益", "body": "降低成本，提升一致性，让内容生产流程可自动化。"}
+  ],
+  "brand": "consulting-report"
+}

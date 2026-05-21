@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      width: 1080px;
+      background: #0d0d0d;
+      padding: 60px;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: #f8fafc;
+    }
+    .card {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 58px 58px 50px;
+    }
+    .label {
+      display: inline-flex;
+      color: #4ade80;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 20px;
+      font-weight: 750;
+      margin-bottom: 26px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 100%;
+      color: #ffffff;
+      font-size: 39px;
+      line-height: 1.16;
+      letter-spacing: 0;
+      font-weight: 850;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+    .subtitle {
+      margin: 22px 0 38px;
+      color: #b7c0ca;
+      font-size: 27px;
+      line-height: 1.52;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0 0 30px;
+    }
+    .stat-box {
+      min-width: 0;
+      padding: 26px;
+      background: #1b1b1b;
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+    }
+    .stat {
+      color: #4ade80;
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 850;
+      overflow-wrap: anywhere;
+    }
+    .stat-label {
+      margin-top: 12px;
+      color: #cbd5e1;
+      font-size: 23px;
+      line-height: 1.35;
+    }
+    .bullets {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .bullets li {
+      color: #e5e7eb;
+      font-size: 25px;
+      line-height: 1.45;
+      padding-left: 24px;
+      position: relative;
+      overflow-wrap: anywhere;
+    }
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .tag {
+      color: #d1fae5;
+      background: rgba(74, 222, 128, 0.12);
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 20px;
+      font-weight: 650;
+    }
+    .brand {
+      margin-top: 34px;
+      padding: 18px 20px 0;
+      border-top: 1px solid #2a2a2a;
+      color: #cbd5e1;
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 750;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="label">代运营复盘</div>
+    <h1>青石里足浴门店经营复盘</h1>
+    <div class="subtitle">统计周期：2026-05-11 至 2026-05-17；围绕交易表现、直播、短视频、商品与营销推广复盘本周期经营结果。</div>
+    <section class="stats"><div class="stat-box"><div class="stat">2.32万元</div><div class="stat-label">累计支付 GMV，环比 -32.95%</div></div>
+<div class="stat-box"><div class="stat">1.13万元</div><div class="stat-label">核销 GMV，核销率 48.83%</div></div>
+<div class="stat-box"><div class="stat">1.21万元</div><div class="stat-label">直播支付 GMV，环比 +45.94%</div></div>
+<div class="stat-box"><div class="stat">3713元</div><div class="stat-label">视频支付 GMV，环比 +698.49%</div></div></section>
+    <ul class="bullets"><li>门店经营分 120 分，区域收藏榜排名保持靠前。</li>
+<li>搜索渠道、其他渠道、获客卡渠道构成本周期主要交易来源。</li>
+<li>直播共 8 场，达人直播贡献明显，场均直播 GMV 超过同行优秀水平。</li>
+<li>热销套餐贡献核心成交，建议继续围绕高性价比项目做内容放大。</li>
+<li>超值券贡献支付 GMV 1.38 万元，占总成交金额 59.52%。</li></ul>
+    <div class="tags"><span class="tag">经营复盘</span>
+<span class="tag">直播增长</span>
+<span class="tag">短视频转化</span>
+<span class="tag">商品动销</span></div>
+    <div class="brand">星河本地生活 · 代运营周报</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1440px; }
+    body {
+      background: #0f1513;
+      color: #f8f5ee;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1440px;
+      overflow: hidden;
+      border: 0;
+      background: #0f1513;
+    }
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("$background_url");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.72) contrast(1.08) brightness(0.72);
+      transform: scale(1.02);
+    }
+    .veil {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(236, 213, 170, 0.10), transparent 28%),
+        linear-gradient(180deg, rgba(10, 18, 19, 0.24) 0%, rgba(10, 18, 19, 0.32) 34%, rgba(6, 10, 9, 0.78) 100%),
+        linear-gradient(90deg, rgba(8, 15, 16, 0.44), transparent 28%, transparent 72%, rgba(8, 15, 16, 0.42));
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 7px 7px;
+      mix-blend-mode: overlay;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr auto 1fr;
+      padding: 78px 78px 92px;
+      text-align: center;
+    }
+    .side-note {
+      position: absolute;
+      top: 82px;
+      right: 64px;
+      writing-mode: vertical-rl;
+      color: rgba(245, 234, 213, 0.54);
+      font-size: 15px;
+      letter-spacing: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .hero {
+      grid-row: 2;
+      align-self: center;
+      margin-top: 18px;
+    }
+    .kicker {
+      color: #dbc29a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+      opacity: 0.92;
+    }
+    h1 {
+      margin: 0;
+      color: #f8f5ee;
+      font-family: "Songti SC", "STSong", "SimSun", serif;
+      font-size: 82px;
+      line-height: 1.14;
+      letter-spacing: 0;
+      font-weight: 950;
+      text-shadow: 0 16px 30px rgba(0,0,0,0.36);
+    }
+    h1 .warm {
+      display: block;
+      color: #dec197;
+      font-size: 70px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      margin: 24px auto 0;
+      color: rgba(248, 245, 238, 0.86);
+      font-size: 30px;
+      line-height: 1.58;
+      font-weight: 520;
+      max-width: 760px;
+      text-shadow: 0 12px 28px rgba(0,0,0,0.42);
+    }
+    .rule {
+      width: 70px;
+      height: 2px;
+      margin: 32px auto 30px;
+      background: #d8bd90;
+      opacity: 0.92;
+    }
+    .desc {
+      color: rgba(248, 245, 238, 0.76);
+      font-size: 24px;
+      line-height: 1.58;
+      font-weight: 460;
+      max-width: 650px;
+      margin: 0 auto;
+      text-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    }
+    .pill {
+      display: inline-grid;
+      place-items: center;
+      min-width: 126px;
+      height: 44px;
+      margin-top: 58px;
+      padding: 0 28px;
+      color: rgba(248, 245, 238, 0.9);
+      border: 1px solid rgba(248, 245, 238, 0.68);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-size: 20px;
+      letter-spacing: 2px;
+      font-weight: 520;
+    }
+    .brand {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 122px;
+      text-align: center;
+    }
+    .brand-name {
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: 31px;
+      line-height: 1.2;
+      font-weight: 800;
+      text-shadow: 0 14px 30px rgba(0,0,0,0.44);
+    }
+    .brand-sub {
+      margin-top: 14px;
+      color: rgba(248, 245, 238, 0.74);
+      font-size: 21px;
+      letter-spacing: 2px;
+      font-weight: 460;
+      text-shadow: 0 12px 28px rgba(0,0,0,0.44);
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="grain"></div>
+    <div class="content">
+      <div class="side-note">$side_note</div>
+      <section class="hero">
+        <div class="kicker">$kicker</div>
+        <h1>$nature_title_html</h1>
+        <div class="subtitle">$subtitle</div>
+        <div class="rule"></div>
+        <div class="desc">$description</div>
+        <div class="pill">$pill</div>
+      </section>
+      <div class="brand">
+        <div class="brand-name">$brand</div>
+        <div class="brand-sub">$brand_subtitle</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

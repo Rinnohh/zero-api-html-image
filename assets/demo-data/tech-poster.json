@@ -1,0 +1,16 @@
+{
+  "eyebrow": "TECH POSTER",
+  "title": "把浏览器变成稳定的视觉渲染引擎",
+  "subtitle": "适合技术文章、产品发布、自动化工作流和工程向内容传播。",
+  "metrics": [
+    {"value": "HTML", "label": "结构层"},
+    {"value": "CSS", "label": "视觉层"}
+  ],
+  "items": [
+    "布局、字号、间距和对齐全部可控。",
+    "本地渲染，无需图片生成接口。",
+    "模板扩展后可批量生成系列海报。"
+  ],
+  "tags": ["Browser", "Screenshot", "Automation"],
+  "brand": "tech-poster"
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      width: 1080px;
+      min-height: 1440px;
+      background: #f7f7f6;
+      color: #080808;
+      padding: 72px 80px 58px;
+      font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
+    }
+    .page {
+      min-height: 1310px;
+      position: relative;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+    }
+    .issue {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .issue::before {
+      content: "";
+      width: 5px;
+      height: 32px;
+      background: #0a0a0a;
+      display: block;
+    }
+    .hero {
+      position: relative;
+      padding-top: 100px;
+      padding-bottom: 78px;
+    }
+    .watermark {
+      position: absolute;
+      right: -26px;
+      top: -142px;
+      color: #eeeeec;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 148px;
+      line-height: 0.72;
+      font-weight: 900;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: 18px;
+      z-index: 0;
+    }
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 850px;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: 92px;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+    .subline {
+      position: relative;
+      z-index: 1;
+      margin-top: 42px;
+      padding-top: 18px;
+      color: #a6a6a3;
+      font-size: 19px;
+      letter-spacing: 6px;
+      font-weight: 800;
+    }
+    .steps {
+      width: 760px;
+      margin: 116px auto 0;
+      display: grid;
+      gap: 0;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      align-items: center;
+      min-height: 112px;
+      border-bottom: 1px solid #dfdfdc;
+    }
+    .num {
+      color: #ededeb;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 58px;
+      font-weight: 900;
+    }
+    .step-text {
+      color: #202020;
+      font-size: 29px;
+      line-height: 1.4;
+      font-weight: 520;
+      letter-spacing: 1px;
+    }
+    .core {
+      align-self: end;
+      margin-top: 170px;
+      padding: 0 0 40px 22px;
+      border-left: 5px solid #080808;
+    }
+    .core strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .core span {
+      color: #ababaa;
+      font-size: 17px;
+      letter-spacing: 3px;
+      font-weight: 800;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid #d7d7d4;
+      padding-top: 26px;
+      color: #a6a6a3;
+      font-size: 16px;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="issue">$issue</div>
+
+    <section class="hero">
+      <div class="watermark">$watermark</div>
+      <h1>$title</h1>
+      <div class="subline">$subline</div>
+    </section>
+
+    <section class="steps">$steps_html</section>
+
+    <section class="core">
+      <strong>$core</strong>
+      <span>$core_subtitle</span>
+    </section>
+
+    <div class="footer">
+      <span>$footer_left</span>
+      <span>$brand</span>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      width: 1080px;
+      background: #6b3f24;
+      color: #3b1f10;
+      padding: 34px;
+      font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+      image-rendering: pixelated;
+    }
+    .scene {
+      min-height: 1040px;
+      border: 6px solid #2c170d;
+      background:
+        repeating-linear-gradient(90deg, #b97538 0 30px, #8a502a 30px 35px, #c98541 35px 64px),
+        #a96432;
+      box-shadow: 10px 10px 0 #2c170d;
+      padding: 34px;
+    }
+    .hud {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 42px;
+    }
+    .hud-box {
+      border: 5px solid #2c170d;
+      background: #e7b56f;
+      box-shadow: 5px 5px 0 #2c170d;
+      padding: 13px 18px;
+      color: #4b2815;
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #f7d38b;
+    }
+    .sign {
+      max-width: 850px;
+      margin: 0 auto 34px;
+      text-align: center;
+      border: 7px solid #3b1f10;
+      background:
+        repeating-linear-gradient(0deg, rgba(95,51,24,.14) 0 3px, transparent 3px 22px),
+        linear-gradient(#edc27a, #d99a55);
+      box-shadow: 8px 8px 0 #2c170d, inset 0 0 0 5px #f7d696;
+      padding: 32px 42px 30px;
+      position: relative;
+    }
+    .sign::before, .sign::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      width: 24px;
+      height: 24px;
+      border: 5px solid #4b2815;
+      background: #c87a3a;
+    }
+    .sign::before { left: 18px; }
+    .sign::after { right: 18px; }
+    h1 {
+      margin: 0;
+      color: #6a3218;
+      font-family: "Menlo", "Monaco", "Consolas", "Courier New", "PingFang SC", monospace;
+      font-size: 50px;
+      line-height: 1.15;
+      font-weight: 950;
+      letter-spacing: 1px;
+      text-shadow:
+        3px 0 0 #f7d38b,
+        0 3px 0 #f7d38b,
+        4px 4px 0 rgba(44,23,13,0.42);
+      overflow-wrap: anywhere;
+    }
+    .subtitle {
+      margin: 18px auto 0;
+      color: #5a2d16;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 23px;
+      line-height: 1.55;
+      font-weight: 760;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 30px 0 34px;
+    }
+    .metric {
+      min-width: 0;
+      border: 5px solid #3b1f10;
+      background: #f6d38f;
+      padding: 17px 13px;
+      box-shadow: 5px 5px 0 #2c170d, inset 0 0 0 3px #fff0b8;
+    }
+    .metric strong {
+      display: block;
+      color: #2e7a2d;
+      font-size: 29px;
+      line-height: 1.08;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: #5a2d16;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.34;
+      font-weight: 760;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .panel {
+      border: 6px solid #3b1f10;
+      background: #f4c97f;
+      padding: 24px;
+      box-shadow: 7px 7px 0 #2c170d, inset 0 0 0 4px #fff0b8;
+    }
+    .section {
+      padding: 16px 0;
+      border-bottom: 4px solid #b36b34;
+    }
+    .section:first-child { padding-top: 0; }
+    .section:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    h2 {
+      margin: 0 0 8px;
+      color: #6a3218;
+      font-size: 20px;
+      line-height: 1.28;
+      font-weight: 950;
+      text-shadow: 2px 2px 0 #f7d38b;
+    }
+    p, li {
+      color: #4a2412;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      font-weight: 720;
+      overflow-wrap: anywhere;
+    }
+    p { margin: 0; }
+    ul {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: 4px solid #3b1f10;
+      background: #f8dca2;
+    }
+    li {
+      position: relative;
+      padding: 16px 16px 16px 46px;
+      border-bottom: 3px solid #b36b34;
+    }
+    li:last-child { border-bottom: 0; }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 22px;
+      width: 14px;
+      height: 14px;
+      background: #d94f2a;
+      border: 3px solid #3b1f10;
+      box-shadow: 3px 3px 0 #3b1f10;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .tag {
+      border: 4px solid #3b1f10;
+      background: #7fc756;
+      color: #2c170d;
+      padding: 8px 11px;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 3px 3px 0 #2c170d;
+      text-transform: uppercase;
+    }
+    .brand {
+      margin-top: 30px;
+      color: #fff0b8;
+      font-size: 16px;
+      font-weight: 950;
+      text-align: right;
+      text-shadow: 2px 2px 0 #2c170d;
+      overflow-wrap: anywhere;
+    }
+    .brand:empty { display: none; }
+  </style>
+</head>
+<body>
+  <main class="scene">
+    <div class="hud">
+      <div class="hud-box">Hermes 安装</div>
+      <div class="hud-box">DAY 18 · SUNNY · LV. 11</div>
+    </div>
+
+    <section class="sign">
+      <h1>Hermes安装教程</h1>
+      <div class="subtitle">从 0 到 1 完成 Hermes 本地安装：先获取可信安装包，再完成系统安装与首次启动授权，最后用一个简单任务确认 Hermes 已经能正常读取文件、执行指令并输出结果。</div>
+    </section>
+
+    <section class="metrics"><div class="metric"><strong>01</strong><span>下载安装包</span></div>
+<div class="metric"><strong>02</strong><span>完成本地安装</span></div>
+<div class="metric"><strong>03</strong><span>首次启动授权</span></div>
+<div class="metric"><strong>04</strong><span>运行测试任务</span></div></section>
+
+    <section class="grid">
+      <div class="panel"><article class="section"><h2>步骤 01 · 获取 Hermes</h2><p>从官方发布渠道下载适合当前系统的 Hermes 安装包，确认文件来源可信。</p></article>
+<article class="section"><h2>步骤 02 · 安装到本机</h2><p>按系统提示完成安装；macOS 可拖入 Applications，Windows 可运行安装程序。</p></article>
+<article class="section"><h2>步骤 03 · 首次启动</h2><p>打开 Hermes，完成必要授权、账号登录和本地工作目录初始化。</p></article></div>
+      <div class="panel">
+        <h2>任务菜单</h2>
+        <ul><li>准备网络、浏览器和一个可写入的本地工作目录。</li>
+<li>首次启动后检查是否能新建会话并读取本地文件。</li>
+<li>运行一个简单任务，例如让 Hermes 总结一段文字。</li>
+<li>如果后续要安装 Skill，再进入 Hermes 的 skills 目录放置完整 Skill 文件夹。</li></ul>
+        <div class="tags"><span class="tag">HERMES</span>
+<span class="tag">INSTALL</span>
+<span class="tag">SETUP</span>
+<span class="tag">LOCAL</span></div>
+      </div>
+    </section>
+
+    <div class="brand"></div>
+  </main>
+</body>
+</html>
