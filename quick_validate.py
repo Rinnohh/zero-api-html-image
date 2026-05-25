@@ -54,7 +54,6 @@ def check_core_files() -> None:
         "SKILL.md",
         "requirements.txt",
         "docs/DEPLOYMENT.md",
-        "docs/OPENCLAW_LOBSTER.md",
         "scripts/doctor.py",
         "scripts/render_html_image.py",
         "scripts/build_template_gallery.py",
@@ -101,7 +100,6 @@ def check_skill_rules() -> None:
         "TRIM_BOTTOM_PADDING",
         "This skill is portable by design",
         "docs/DEPLOYMENT.md",
-        "docs/OPENCLAW_LOBSTER.md",
         "Lobster",
         "Do not hard-code Codex-only browser APIs",
     ]

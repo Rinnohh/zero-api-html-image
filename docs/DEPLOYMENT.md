@@ -27,7 +27,7 @@ python3 scripts/render_html_image.py --style warm-steps --data assets/demo-data/
 
 Open the returned `browser_url`, wait for rendering, then save a screenshot.
 
-If `file://` URLs are blocked, serve the output directory through a local static server and open the local HTTP URL. Some hosted agent runtimes also block local HTTP navigation; in that case use a platform-specific fallback such as CDP capture or an external screenshot service.
+If `file://` URLs are blocked, serve the output directory through a local static server and open the local HTTP URL.
 
 ### Python Playwright
 
@@ -61,12 +61,6 @@ Use this when the cloud runtime cannot run a browser locally. Generate HTML with
 - local or uploaded assets;
 - enough wait time for fonts and background images to render.
 
-### OpenClaw/Lobster Fallbacks
-
-Some OpenClaw/Lobster deployments expose a browser through a Chrome DevTools Protocol port but block `file://` and local HTTP navigation in the user-facing browser tool. Keep the main skill workflow platform-neutral; use the fallback notes only when that runtime needs them:
-
-- `docs/OPENCLAW_LOBSTER.md`
-
 ## Environment Doctor
 
 Run:
@@ -98,7 +92,6 @@ Ship the whole skill directory, including:
 - `assets/images/`
 - `assets/demos/template-gallery.png`
 - `docs/DEPLOYMENT.md`
-- `docs/OPENCLAW_LOBSTER.md`
 
 Demo PNGs are useful for template selection and QA. Keep them with the skill unless the target platform has a separate gallery asset pipeline.
 
